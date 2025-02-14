@@ -189,14 +189,14 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .navbar-brand {
     /* font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive; */
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,cursive;
-    color: #FF0098;
+    color: #449154;
 }
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
-    color: #00CCFF;
+    color: #4a5ded;
 }
 
 .navbar-default .navbar-collapse {
@@ -279,7 +279,7 @@ header {
     text-align: center;
     color: #000;
     background-attachment: scroll;
-    background-image: url(../img/monsoon.jpg);
+    background-image: url(../img/utahlandscape.jpg);
     background-position: center top;
     background-repeat: none;
     -webkit-background-size: cover;
