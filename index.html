@@ -1,328 +1,552 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom K Merchant — Community &amp; Ecosystem Ecologist</title>
+    <meta name="description" content="Tom K Merchant — postdoctoral researcher in the Suding Lab at the University of Colorado Boulder, studying drought and fire in rangelands across the Western US.">
+    <link rel="canonical" href="https://merchanttk.github.io/">
+    <meta property="og:image" content="https://MerchantTK.github.io/img/sagesea.jpg">
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tom K Merchant</title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Community and Ecosystem Ecologist">
-    <link rel="canonical" href="https://MerchantTK.github.io/">
+    <!--
+        IMAGE PATHS:
+        For local preview alongside the saved-from-Chrome download, paths use "Tom K Merchant_files/".
+        When deploying to the GitHub Pages repo, find/replace "Tom K Merchant_files/" → "img/"
+    -->
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    
-    <meta property="og:image" content="https://MerchantTK.github.io/img/utahlandscape.jpg"/>
-    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
 
-    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-   <link rel="stylesheet" href="/style.css"> 
+    <style>
+        :root {
+            --bg: #faf8f3;
+            --ink: #1a1a18;
+            --muted: #6b6f64;
+            --rule: #e2ddce;
+            --cream: #f5efe5;
 
-    <!-- Custom Fonts -->
-    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="/academicons/academicons.css" >
-    
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-
-<style>
-        /* Change color of the icons */
-        .navbar-nav .fa {
-            color: #007bff; /* Adjust the color as needed */
+            /* Tom's palette — used as accents */
+            --slate: #2c3a40;
+            --green: #4a9d2f;
+            --green-bright: #5cb340;
+            --blue: #0062cc;
+            --cyan: #1bb8a8;
+            --terracotta: #c87a64;
+            --terracotta-text: #9c4a37;
         }
 
-        /* Optionally, change color on hover */
-        .navbar-nav .fa:hover {
-            color: #42f5e3; /* Adjust hover color */
-        }
-        
+        * { box-sizing: border-box; }
 
-    
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            font-size: 17px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 400;
+            letter-spacing: -0.025em;
+            color: var(--ink);
+            margin: 0;
+        }
+        p { margin: 0 0 1.1rem; }
+
+        a { color: var(--blue); transition: color 0.2s; }
+        a:focus-visible {
+            outline: 2px solid var(--green);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        /* Accessibility helpers */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 8px;
+            padding: 8px 16px;
+            background: var(--slate);
+            color: var(--cream);
+            z-index: 1000;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .skip-link:focus { left: 8px; }
+        .visually-hidden {
+            position: absolute;
+            width: 1px; height: 1px;
+            padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0 0 0 0);
+            white-space: nowrap; border: 0;
+        }
+
+        /* Sticky minimal nav */
+        .topnav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(250, 248, 243, 0.82);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--rule);
+        }
+        .topnav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .topnav-brand {
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--ink);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+        .topnav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .topnav-links a {
+            color: var(--ink);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .topnav-links a:hover,
+        .topnav-links a:focus { color: var(--terracotta-text); }
+
+        /* HERO — full-bleed sagesea, text overlaid */
+        .hero {
+            position: relative;
+            min-height: calc(100vh - 60px);
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: var(--slate);
+        }
+        .hero-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 65%;
+            z-index: 0;
+        }
+        .hero-scrim {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.35) 70%, rgba(0,0,0,0.7) 100%),
+                linear-gradient(90deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 55%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+            color: #fff;
+        }
+        .hero-eyebrow {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.92);
+            margin: 0 0 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+        .hero-eyebrow::before {
+            content: "";
+            display: inline-block;
+            width: 8px; height: 8px;
+            background: var(--green-bright);
+            border-radius: 50%;
+        }
+        .hero-name {
+            font-family: 'Fraunces', serif;
+            font-weight: 400;
+            font-size: clamp(2.25rem, 4.5vw, 4rem);
+            line-height: 0.95;
+            letter-spacing: 0.04em;
+            margin: 0 0 1.5rem;
+            color: #fff;
+            text-shadow: 0 1px 30px rgba(0,0,0,0.25);
+        }
+        .hero-tag {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+            color: rgba(255,255,255,0.88);
+            margin: 0 0 2.5rem;
+            max-width: 540px;
+        }
+        .hero-social {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .hero-social a {
+            color: #fff;
+            font-size: 1.1rem;
+            text-decoration: none;
+            opacity: 0.85;
+            transition: opacity 0.2s, color 0.2s;
+        }
+        .hero-social a:hover,
+        .hero-social a:focus-visible {
+            opacity: 1;
+            color: var(--green-bright);
+            outline: none;
+        }
+
+        /* PROSE — editorial flow */
+        .prose {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 7rem 2rem;
+        }
+        .prose a {
+            color: var(--blue);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+        }
+        .prose a:hover { color: var(--cyan); }
+        .eyebrow {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--terracotta-text);
+            margin: 0 0 1.25rem;
+        }
+        .prose h2 {
+            font-size: clamp(2.25rem, 4vw, 3.25rem);
+            margin: 0 0 2rem;
+            line-height: 1.05;
+        }
+
+        /* About */
+        #about .portrait {
+            float: right;
+            shape-outside: circle();
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0.4rem 0 1rem 2rem;
+        }
+
+        /* Research — chapter feel */
+        .project {
+            border-top: 1px solid var(--rule);
+            padding-top: 4.5rem;
+            margin-top: 5rem;
+        }
+        .project-meta {
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+            margin: 0 0 1.5rem;
+        }
+        .project-num {
+            font-family: 'Fraunces', serif;
+            font-weight: 300;
+            font-size: 3rem;
+            line-height: 1;
+            color: var(--terracotta);
+            margin: 0;
+        }
+        .project h3 {
+            font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+            font-weight: 400;
+            margin: 0 0 1.5rem;
+            line-height: 1.15;
+        }
+        .project-image {
+            display: block;
+            width: 100vw;
+            max-width: 1280px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            height: clamp(280px, 50vh, 460px);
+            object-fit: cover;
+            margin: 2.5rem 0 3rem;
+        }
+        .project h6 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.75rem;
+            color: var(--green);
+            margin: 2.5rem 0 0.75rem;
+        }
+        .collaborators {
+            color: var(--muted);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: 2rem;
+        }
+
+        /* Outreach */
+        #outreach .outreach-img {
+            display: block;
+            width: 100vw;
+            max-width: 1280px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            height: clamp(260px, 45vh, 420px);
+            object-fit: cover;
+            margin: 2rem 0 3.5rem;
+        }
+        .outreach-block {
+            border-top: 1px solid var(--rule);
+            padding-top: 3rem;
+            margin-top: 3.5rem;
+        }
+        .outreach-block:first-of-type {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+        .outreach-block h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin: 0 0 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--slate);
+            color: var(--cream);
+            padding: 4rem 0 3rem;
+        }
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        footer .footer-mark {
+            font-family: 'Fraunces', serif;
+            font-size: 1.15rem;
+            color: var(--cream);
+            margin: 0 0 0.75rem;
+        }
+        footer .footer-meta {
+            color: rgba(245, 239, 229, 0.72);
+            font-size: 0.92rem;
+            margin: 0;
+        }
+        footer .footer-meta a { color: var(--cream); text-decoration: underline; text-underline-offset: 3px; }
+        footer .footer-meta a:hover { color: var(--green-bright); }
+        footer .footer-social {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        footer .footer-social a {
+            color: var(--cream);
+            font-size: 1rem;
+            text-decoration: none;
+            opacity: 0.85;
+            transition: opacity 0.2s, color 0.2s;
+        }
+        footer .footer-social a:hover,
+        footer .footer-social a:focus-visible {
+            opacity: 1;
+            color: var(--green-bright);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            .topnav-inner { padding: 0.85rem 1.25rem; }
+            .topnav-links { gap: 1.25rem; }
+            .hero { min-height: calc(100vh - 56px); }
+            .hero-content { padding: 0 1.25rem 3rem; }
+            .prose { padding: 4.5rem 1.25rem; }
+            #about .portrait {
+                float: none;
+                margin: 0 auto 2rem;
+                display: block;
+            }
+            .project { padding-top: 3rem; margin-top: 3.5rem; }
+            .project-meta { flex-direction: column; gap: 0.5rem; }
+            .project-num { font-size: 2.25rem; }
+            .footer-inner { flex-direction: column; align-items: flex-start; }
+        }
     </style>
 </head>
 
+<body>
 
+<a class="skip-link" href="#main">Skip to main content</a>
 
-    <body id="page-top" class="index">
-      <style>
-    /* Change font color for navigation links */
-    .navbar-nav li a {
-        color: #007bff; /* You can replace this with any color */
-    }
+<!-- Sticky minimal nav -->
+<nav class="topnav" aria-label="Main">
+    <div class="topnav-inner">
+        <a class="topnav-brand" href="#top">Tom K Merchant</a>
+        <ul class="topnav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#outreach">Outreach</a></li>
+        </ul>
+    </div>
+</nav>
 
-    /* Change color on hover */
-    .navbar-nav li a:hover {
-        color: #42f5e3; /* Hover color */
-    }
+<!-- Hero with sagesea as background -->
+<header class="hero" id="top">
+    <img src="Tom K Merchant_files/sagesea.jpg" alt="" class="hero-img" aria-hidden="true">
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-content">
+        <p class="hero-eyebrow">Postdoctoral researcher · Suding Lab</p>
+        <h1 class="hero-name">Tom K<br>Merchant.</h1>
+        <p class="hero-tag">Community &amp; ecosystem ecologist — studying drought and fire in rangelands across the Western US.</p>
+        <ul class="hero-social" aria-label="Contact and profiles">
+            <li><a href="mailto:thomaskmerchant@gmail.com" aria-label="Email Tom"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+            <li><a href="https://bsky.app/profile/tkmerchant.bsky.social" aria-label="Bluesky profile"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M135.72 44.03C202.21 93.97 273.72 195.23 300 249.55c26.28-54.32 97.79-155.58 164.28-205.52C512.26 8.024 590-19.34 590 69.34c0 17.7-10.15 148.79-16.11 170.07-20.7 73.98-96.14 92.86-163.27 81.43 117.3 19.97 147.14 86.15 82.69 152.33-122.39 125.59-175.91-31.49-189.63-71.76-2.51-7.39-3.69-10.84-3.69-7.91 0-2.93-1.18.52-3.69 7.91-13.72 40.27-67.24 197.35-189.63 71.76-64.45-66.18-34.61-132.36 82.69-152.33-67.13 11.43-142.57-7.45-163.27-81.43C20.15 218.13 10 87.04 10 69.34c0-88.68 77.74-61.32 125.72-25.31z"/></svg></a></li>
+            <li><a href="https://scholar.google.com/citations?user=wGPanSYAAAAJ&hl=en" aria-label="Google Scholar profile"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></a></li>
+            <li><a href="https://github.com/MerchantTK" aria-label="GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+</header>
 
-    /* Change color of icons */
-    .social-buttons i {
-        color: #007bff; /* Adjust as needed */
-    }
+<main id="main">
 
-    /* Change icon color on hover */
-    .social-buttons i:hover {
-        color: #42f5e3; /* Hover color */
-    }
+<!-- About -->
+<section id="about" class="prose" aria-labelledby="about-heading">
+    <p class="eyebrow">About</p>
+    <h2 id="about-heading">Hello.</h2>
+    <img src="Tom K Merchant_files/me.jpg" alt="Tom K Merchant standing with a black-and-white dog in a snowy mountain landscape" class="portrait">
+    <p>I'm a broadly trained community and ecosystem ecologist with a passion for large datasets, global change, and applied science. I'm currently a postdoctoral researcher in the <a href="https://www.sudinglab.org">Suding Lab</a> at the University of Colorado Boulder, studying drought and fire in rangelands across the Western US.</p>
+    <p>During my Ph.D., I focused on how plant communities and ecosystems respond to changes in climatic conditions, with the goal of informing land management decisions. I'm particularly interested in the impact of precipitation variability in arid and semi-arid rangelands. Previously, I investigated the behavioral ecology of checkerspot butterflies in coastal Maine.</p>
+</section>
 
-    .style_as_me {
-        font-weight: bold;
-    }
-</style>
+<!-- Research -->
+<section id="research" class="prose" aria-labelledby="research-heading">
+    <p class="eyebrow">Selected work</p>
+    <h2 id="research-heading">Research.</h2>
+    <p>Four threads of work on how plant communities respond to fire, drought, and a more variable climate.</p>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Tom K Merchant</a>
-            </div>
+    <article class="project">
+        <div class="project-meta"><p class="project-num">01</p></div>
+        <h3>Fire impacts in the Great Basin</h3>
+        <p>Fire is rapidly altering the historical sagebrush steppe ecosystem of the northern Great Basin. At the same time, climate projections predict an increase in precipitation variability — but we currently have a limited understanding of how these two drivers will interact.</p>
+        <p>Using satellite-based gridded datasets, we assessed how fire alters the relationship between net primary production and precipitation across a swath of northern Nevada. Drawing on quantitative methods from the causal inference literature, we found that as fire converts sagebrush ecosystems to annual-grass-dominated systems, the sensitivity of production to precipitation changes — leading to far more inter-annual fluctuations. These fluctuations, in turn, have the potential to increase fire hazard, particularly under a more variable precipitation regime.</p>
+        <p class="collaborators">Collaborators: Elisa Van Cleemput, Andrew Felton, Laura Dee, Peter Adler, Mike Koontz, Katie Suding</p>
+    </article>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#people">About Me</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#research">Research</a>
-                    </li>
-                   
-                    <li>
-                        <a class="page-scroll" href="#outreach">Outreach</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+    <article class="project">
+        <div class="project-meta"><p class="project-num">02</p></div>
+        <h3>Drought impacts on plant communities</h3>
+        <p>Droughts are becoming increasingly frequent and severe. I use a variety of experimental approaches to ask how droughts affect plant communities and ecosystem functioning — including how the spatial arrangement of communities interacts with drought, and how short-term extreme droughts shape rangelands.</p>
+
+        <h6>Spatial patterns &amp; ecosystem resilience</h6>
+        <p>We implemented a long-term experiment in a Colorado grassland, simulating extreme precipitation shifts — drought (-66% of ambient) and wet periods (+66%), along with low-intensity grazing. Drought consistently reduced spatial vegetation aggregation but unexpectedly increased plant diversity, favoring stress-tolerant species. Less aggregated communities showed signs of recovery over time, suggesting a feedback mechanism where stress-adapted species influence ecosystem stability.</p>
+        <p class="collaborators">Collaborators: Julie Larson, Hunter Geist-Sanchez, Sarah Elizabeth Stockman, Meghan Hayden, Laura Dee, Katie Suding</p>
+
+        <h6>Intra-season extreme droughts</h6>
+        <p>To test how short-term extreme droughts affect above- and belowground processes, we used rain-out shelters to remove 100% of precipitation for five weeks in either spring or late summer. The impact of timing depended on plant community composition — and while these droughts had only transient effects on aboveground production, effects on belowground production were stronger and more long-lived. As ecologists, we may be underestimating the effects of short-term droughts by focusing on aboveground responses.</p>
+        <p class="collaborators">Collaborators: Meghan Hayden, Katie Suding</p>
+    </article>
+
+    <article class="project">
+        <div class="project-meta"><p class="project-num">03</p></div>
+        <h3>Predicting variability in primary production</h3>
+        <p>In semi-arid grasslands, landscape-level variability in primary production is critical for land management — particularly livestock grazing. Productivity can fluctuate widely across space and time, directly impacting forage availability.</p>
+        <p>Using a data-rich long-term dataset from a Colorado grassland, we investigated the drivers of spatio-temporal variability in aboveground net primary production (ANPP). Spatial variation in plant communities and soils interact to amplify these fluctuations, because different communities and soils respond to precipitation falling over different time periods — in some cases, even precipitation that fell two years ago. These effects are compounded by precipitation that varies sharply across the landscape due to localized convective storms.</p>
+        <p class="collaborators">Collaborators: Olivia Hajek, David Augustine, Lauren Porensky, Sean Kearney, David Hoover</p>
+    </article>
+
+    <article class="project">
+        <div class="project-meta"><p class="project-num">04</p></div>
+        <h3>Fire-related plant traits</h3>
+        <p>Historically, the Great Plains has been characterized by both grazing and fire — a history that may have shaped the strategies of plants in these grassland communities. We're quantifying grassland traits related to flammability and grazing, and testing whether there's a trade-off such that some species have fire-adaptive strategies while others are adapted to grazing.</p>
+        <p class="collaborators">Collaborators: Sam Ahler, Jon Henn, Advyth Ramachandran</p>
+    </article>
+</section>
+
+<!-- Outreach -->
+<section id="outreach" class="prose" aria-labelledby="outreach-heading">
+    <p class="eyebrow">Teaching &amp; community</p>
+    <h2 id="outreach-heading">Outreach.</h2>
+    <p>I'm enthusiastic about working with youth and adult community members on topics across the environmental and ecological sciences, and I routinely engage in hands-on educational activities.</p>
+
+    <img src="Tom K Merchant_files/restclass.jpg" alt="Group of students in orange field vests holding tools, with mountains and golden grass behind them" class="outreach-img">
+
+    <div class="outreach-block">
+        <h3>Restoration ecology</h3>
+        <p>I've served as a science advisor and leader for organizations including <a href="https://www.wlrv.org/">Wildland Restoration Volunteers</a>, which brings a wide range of groups — from families to high school students to retirees — out into the field to engage in active restoration projects.</p>
+        <p>In the fall of 2023, I worked with Katie Suding to develop a field-based restoration ecology lab for an upper-level course at CU. Students collected data and used it to develop an evidence-based restoration plan for a degraded grassland in Boulder County — and then implemented their plan in real life.</p>
+    </div>
+
+    <div class="outreach-block">
+        <h3>Mentoring</h3>
+        <p>I find great joy in mentoring students. For several years, I've been involved in mentoring community college students through the Research Experience for Community Colleges program at CU Boulder. I've also worked with numerous CU undergraduates on independent study projects.</p>
+        <p>If you are a CU undergrad interested in this research, please reach out.</p>
+    </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-inner">
+        <div>
+            <p class="footer-mark">Tom K Merchant</p>
+            <p class="footer-meta">
+                Ecology &amp; Evolutionary Biology · CU Boulder<br>
+                <a href="mailto:thomaskmerchant@gmail.com">thomaskmerchant@gmail.com</a>
+            </p>
         </div>
-        <!-- /.container-fluid -->
-    </nav>
+        <ul class="footer-social" aria-label="Contact and profiles">
+            <li><a href="mailto:thomaskmerchant@gmail.com" aria-label="Email Tom"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+            <li><a href="https://bsky.app/profile/tkmerchant.bsky.social" aria-label="Bluesky profile"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M135.72 44.03C202.21 93.97 273.72 195.23 300 249.55c26.28-54.32 97.79-155.58 164.28-205.52C512.26 8.024 590-19.34 590 69.34c0 17.7-10.15 148.79-16.11 170.07-20.7 73.98-96.14 92.86-163.27 81.43 117.3 19.97 147.14 86.15 82.69 152.33-122.39 125.59-175.91-31.49-189.63-71.76-2.51-7.39-3.69-10.84-3.69-7.91 0-2.93-1.18.52-3.69 7.91-13.72 40.27-67.24 197.35-189.63 71.76-64.45-66.18-34.61-132.36 82.69-152.33-67.13 11.43-142.57-7.45-163.27-81.43C20.15 218.13 10 87.04 10 69.34c0-88.68 77.74-61.32 125.72-25.31z"/></svg></a></li>
+            <li><a href="https://scholar.google.com/citations?user=wGPanSYAAAAJ&hl=en" aria-label="Google Scholar profile"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></a></li>
+            <li><a href="https://github.com/MerchantTK" aria-label="GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+</footer>
 
- 
-    <!-- Header -->
-    <header>
-        <div class="container">
-           
-         
-            <div class="intro-text">
-
-              <div style='position:absolute;z-index:0;left:0;top:10;width:100%;height:100%'>
-       <div class="intro-lead-in"></div>
-                <div class="intro-heading"></div>
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <ul class="list-inline social-buttons">
-                            
-                            <li><a href="mailto:thomaskmerchant@gmail.com"><i class="fa fa-envelope"></i></a>
-                            </li>
-                            
-                            <li><a href="https://bsky.app/profile/tkmerchant.bsky.social"><i class="fa fa-bluesky"></i></a>
-                            </li>
-                            <li><a href="https://scholar.google.com/citations?user=wGPanSYAAAAJ&hl=en" ><i class="ai ai-google-scholar"></i></a>
-			    </li>
-			<li><a href="https://github.com/MerchantTK" ><i class="fa fa-github"></i></a>
-                             </li>
-                          
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-<!--
-        
-          
-        
-          
-        
-          <a class="page-link" href="/research/">research</a>
-        
-          
-        
-                 
- -->
-
-<!-- people Section -->
-    <section id="people" class="bg-warning">
-        <div class="container">
-         <center></center> <img src="img/me.jpg" class="img-responsive img-circle" alt="" width="300" height="300"></center>
-                        <h2>ABOUT ME</h2>
-			<font size="+2">Hello! I am a broadly trained community and ecosystem ecologist, with a passion for large datasets, global change, and applied science. I am currently postdoctoral researcher in the <a href="https://www.sudinglab.org">Suding Lab</a> at the University of Colorado Boulder studing drought and fire in rangelands acros the Western US. During my Ph.D. I focused on how plant communites and ecosystems respond to changes in our climatic conditions with the goal of informing land management decisions. I am particularly interested in the impact of precipitation variablity in arid and semi-arid rangelands. I previously investigated the behavioral ecology of checkerspot butterflies in coastal Maine.</font>
-        </div>
-    </section>
-
-
-<!-- RESEARCH -->
-    <section id="research" class="">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Research</h2>
-                    <h3 class="section-subheading text-muted"></h3>
-                </div>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="row research-topic">
-                <div class="col-md-6">
-                        <img src="img/sagesea.jpg" class="img-responsive" alt="">
-                </div>
-                <div class="col-lg-6">
-                        <h4>Fire impacts in the Great Basin </h4>
-                         <p class="text"> Fire is rapidly altering the historical sagebrush steppe ecosystem of the northern Great Basin. At the same time climate projections predict an increase in precipitation variability. However, we currently have a limited understanding of of how these two drivers will interact with each other. In this project we used satellite-based gridded datasets to assess how fire alters the relationship between net primary production and precipitation across a swath of northern Nevada. Using quatitative methods from the causal inference literature, we found that as fire converts sagebrush ecosystems to annual grass dominated systems the senstivity of production to precipitation changes, leading to for more inter-annual fluctuations in production. Importantly, these increased primary production fluctionations have the potential to increase fire hazard particularly under and increasingly variable precipitation regime. Collaborators: Elisa Van Cleemput, Andrew Felton, Laura Dee, Peter Adler, Mike Koontz, Katie Suding</p>
-                </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="row research-topic">
-                <div class="col-md-6">
-                        <img src="img/field_mapping.jpg" class="img-responsive" alt="Centered Image">
-                </div>
-                <div class="col-lg-6">
-                        <h4>Drought impacts on plant communities</h4>
-                        <p class="text">Droughts are becoming increasingly frequent and severe. I use a variety of experimental approaches to ask how droughts will affect plant communities and ecosystem funtioning. One question I am particularly interested in is how the spatial arrangement of communities interacts with drought through effects on plant demography. I am also interested in the effects of intra-season extreme droughts, or extended periods without preciptiation. </p>
-                        <h6>Spatial patterns and ecosystem resilience in semi-Arid Grasslands</h6>
-                        <p class="text">Semi-arid grasslands are increasingly vulnerable to long-term droughts, which can disrupt biodiversity and ecosystem function. Understanding how vegetation spatial patterns influence ecosystem resilience is critical for predicting landscape-level responses to environmental stressors. In this research, we implement a long-term experiment in a Colorado grassland, simulating extreme precipitation shifts—both drought (-66% of ambient precipitation) and wet periods (+66%), along with low-intensity grazing. Our findings revealed that drought consistently reduced spatial vegetation aggregation but unexpectedly increased plant diversity, favoring stress-tolerant species. Over time, less aggregated plant communities showed signs of recovery, suggesting a dynamic feedback mechanism where stress-adapted species influence ecosystem stability. Low-intensity grazing had minimal direct effects on spatial patterns, reinforcing the idea that its role in shaping grassland biodiversity may depend on specific ecological contexts. These results emphasize the importance of spatial structure in ecological monitoring and conservation, indicating that shifts in vegetation patterning may serve as early indicators of ecosystem change. By integrating spatial aggregation metrics into land management strategies, we can improve predictions of ecosystem responses to climate stressors, informing more adaptive approaches to biodiversity conservation and grassland sustainability. Collaborators: Julie Larson, Hunter Geist-Sanchez, Sarah Elizabeth Stockman, Meghan Hayden, Laura Dee, Katie Suding</p>
-                        <h6>Intra-season extreme droughts</h6>
-                         <p class="text">In addition to long-term shifts in precipitation, we also expect shifts in the timing of precipitation. This will lead to increasing dry periods at unusual times of the year. To test the impact of these short-term extreme droughts on above and beloground ecosystem processes in Colorado grasslands, we used rain-out shelters to remove 100% of precipitation for five weeks in either the spring or late summer. We found that the impact of drought timing depended on plant community composition. Addionally, while these extreme droughts had only transient effect on above ground primary production, effects on belowground production were stonger and more long-lived. This suggests that as ecologists we may be underestating the effects of short-term droughts by focusing on aboveground responses. Collaborators: Meghan Hayden, Katie Suding</p>
-                        
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row research-topic">
-                <div class="col-md-6">
-                        <img src="img/boulder_cow_grassland.jpg" class="img-responsive" alt="">
-                </div>
-                <div class="col-lg-6">
-                        <h4>Predicting spatio-temporal variablity in primrary production for land mangement</h4>
-                        <p class="text"> In semi-arid grasslands, landscape-level variability in primary production is critical for land management, particularly livestock grazing. Productivity can fluctuate widely across space and time, directly impacting forage availability. Understanding how these factors interact at the landscape scale is essential for predicting resource dynamics and making informed management decisions. In this project, we investigate the complex drivers of spatio-temporal variability of aboveground net primary production (ANPP) using a data-rich long-term dataset from a Colorado grassland. Our findings highlight how spatial variation in plant communites and soil characteristics factors interact to increase spatio-temporal functions in ANPP, because different plant communities and soils respond to precipitation falling of different time periods (they even respond to precipitation that fell two-years ago in some cases!).These effects acre compounded by precipitation that can be highly spatially variable across the landscape due to the prevelance of localized covective storms. By incorporating spatial and temporal variability into forecasts, our work provides valuable insights for optimizing grazing strategies and ecological management in water-limited landscapes.  Collaborators: Olivia Hajek, David Augustine, Lauren Porensky, Sean Kearney, and David Hoover
-</p>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row research-topic">
-                <div class="col-md-6">
-                        <img src="img/bouldergrassland.jpg" class="img-responsive" alt="">
-                </div>
-                <div class="col-lg-6">
-                        <h4>Fire related plant traits </h4>
-                        <p class="text"> Historically, the Great Plains has been characterized by both grazing and fire. This history may have shaped the strategies of plant in these grassland communities. In this project we are quantifying grassland traits related to flammability and grazing. We aim to test whether there is a trade off in traits such that some species have fire adaptive strategies while others are adapted to grazing. Collaborators: Sam Ahler, Jon Henn, Advyth Ramachandran</p>
-                </div>
-            </div>
-        </div>
-        
-    </section>
-
-
-
-
-
-<!--- OUTREACH -->
-
-    <section id="outreach" class="">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">OUTREACH</h2>
-                    <h3 class="section-subheading text"> I am enthusiastic about working with youth and adult community members on topics spanning the environmental and ecological sciences. I routinely engage in hands on educational activities. </h3>
-                    <img src="img/restclass.jpg" class="img-responsive" alt="" width="300" height="300">
-                </div>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="row ">
-                <div class="col-lg-12">
-                        <h4>Restoration ecology engagement</h4>
-                        <p class="text">In the past, I have served as a science advisor and leader for organizations including, Wildland Restoration Volunteers. WRV brings a wide range of groups from families, to high school students, to retirees out into the field to engage in active restoration projects. In addition, during the fall of 2023, I worked with Katie Suding to develop a field based resotoration ecology lab for and upper level course at CU. Students in this class collected data and used their data to develope a evidenced based restoration plan for a degraded grassland in Boulder County. Then they implemented their own plan in real life!</p>
-                        <p class="text-muted"> <a class="page-scroll" href="#"></a></p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="row ">
-                <div class="col-lg-12">
-                        <h4>Mentoring</h4>
-                        <p class="text"> I find great joy in mentoring students. For several years, I have been involved in mentoring community college students through the Research Experience for Community Colleges program at CU Boulder. In addition, I have worked with numerous CU undergrads on independent study projects. I you are a CU undergrad interested in this research please reach out. </p>
-                        <p class="text-muted"> <a class="page-scroll" href="#"></a></p>
-                </div>
-            </div>
-        </div>
-        
-     
-
-
-
-      <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 text-left">
-                    <!-- <span class="copyright">&copy; Tom K Merchant 2025</span> -->
-                    Ecology and Evolutionary Biology <br>
-                    University of Colorado Boulder <br>
-                    Boulder, CO - 80309<br>
-                    Email: thomaskmerchant[at]gmail.com
-                </div>
-                <div class="col-md-4 text-center">
-                    <ul class="list-inline social-buttons">
-                        
-                        <li><a href="mailto:thomaskmerchant[at]gmail.com"><i class="fa fa-envelope"></i></a>
-                        </li>
-                        
-                        <li><a href="https://bsky.app/profile/tkmerchant.bsky.social"><i class="fa-brands fa-bluesky"></i>
-</a>
-                        </li>
-                        <li>
-                        <a href="https://scholar.google.com/citations?user=wGPanSYAAAAJ&hl=en" class="social-button google-scholar" target="_blank">
-                             <i class="fab fa-google-scholar"></i> 
-                             </a>
-                             </li>
-                        
-                    
-                </div>
-               
-            </div>
-        </div>
-    </footer>
-
-     <!-- jQuery Version 1.11.0 -->
-    <script src="/js/jquery-1.11.0.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="/js/jquery.easing.min.js"></script>
-    <script src="/js/classie.js"></script>
-    <script src="/js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="/js/jqBootstrapValidation.js"></script>
-    <script src="/js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="/js/agency.js"></script>
-
-
-    </body>
+</body>
 </html>
